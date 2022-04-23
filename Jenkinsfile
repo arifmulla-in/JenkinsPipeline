@@ -18,7 +18,7 @@ pipeline {
         }
         stage('ConsolidateResults') {
             steps {
-                input{"Do you want to capture results?"}
+                input 'Do you want to capture results?'
                 archive "target/*.jar"
             }
         }
