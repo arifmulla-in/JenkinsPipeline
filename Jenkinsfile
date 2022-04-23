@@ -16,5 +16,11 @@ pipeline {
                 bat "mvn package"
             }
         }
+        stage('ConsolidateResults') {
+            steps {
+                input["Do you want to capture results?"]
+                archive "target/*.jar"
+            }
+        }
     }
 }
